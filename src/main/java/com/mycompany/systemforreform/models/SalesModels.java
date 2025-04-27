@@ -14,6 +14,8 @@ import org.bson.Document;
 public class SalesModels {
     private int idSales;
     private Date date;
+      private int month;
+    private int years;
     private String client;
     private List<Document> products;
     private double totalAmount;
@@ -22,9 +24,11 @@ public class SalesModels {
     private double turned;
     private double totalProfit;
 
-    public SalesModels(int idSales, Date date, String client, List<Document> products, double totalAmount, String paymentMethod, double totalCollected, double turned, double totalProfit) {
+    public SalesModels(int idSales, Date date, int month, int years, String client, List<Document> products, double totalAmount, String paymentMethod, double totalCollected, double turned, double totalProfit) {
         this.idSales = idSales;
         this.date = date;
+        this.month = month;
+        this.years = years;
         this.client = client;
         this.products = products;
         this.totalAmount = totalAmount;
@@ -33,6 +37,7 @@ public class SalesModels {
         this.turned = turned;
         this.totalProfit = totalProfit;
     }
+
     
     private int idGenerate(){
         Random rd = new Random();
@@ -42,6 +47,8 @@ public class SalesModels {
     
     public Document toDocumentSales(){
         return new Document("Date",date)
+                .append("Month", month)
+                .append("Year", years)
                 .append("Client", client)
                 .append("Products", products)
                 .append("Total Amount", totalAmount)
