@@ -17,14 +17,7 @@ public interface DateIdSearchableRepository <T> {
     void create(T t);
     
     MongoCollection<Document> findAll();
-    
-    void updateByDate(Date date,T t);
-    
-    void updateById(int id,T t);
-    
-    void deleteByDate(Date date);
-    
-    void deleteById(int id);
+
     
     Document findByDate(Date date);
     

@@ -30,7 +30,7 @@ public class ClientModels {
         return rd.nextInt(999999999);
     }
     
-    private Document toDocumentClient(){
+    public Document toDocumentClient(){
         return new Document("Id Client",idClient)
                 .append("Name", name)
                 .append("Phone", phone)

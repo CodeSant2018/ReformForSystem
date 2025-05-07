@@ -18,13 +18,7 @@ public interface DateAndNameRepository<T> {
 
     MongoCollection<Document> findAll();
 
-    void updateByDate(Date date, T t);
-
-    void updateByName(String name, T t);
-
-    void deleteByDate(Date date);
-
-    void deleteByName(String name);
+ 
 
     Document findByDate(Date date);
 

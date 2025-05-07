@@ -6,12 +6,12 @@ package com.mycompany.systemforreform.models;
 
 import java.util.Date;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 import org.bson.Document;
 
-/**
- *
- * @author thevoid
- */
+@Getter
+@Setter
 public class UserSalesModel {
     
     private Date date;

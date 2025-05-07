@@ -5,12 +5,12 @@
 package com.mycompany.systemforreform.models;
 
 import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 import org.bson.Document;
 
-/**
- *
- * @author thevoid
- */
+
+
 public class UserModels {
     
     private String user;
