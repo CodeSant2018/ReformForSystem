@@ -31,16 +31,6 @@ public class ServiceClient implements NameIdRepository<ClientModels> {
     }
 
     @Override
-    public MongoCollection<Document> findAll() {
-        try {
-            return clients.getCollectionData();
-        } catch (MongoException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    @Override
     public void updateById(int id, ClientModels t) {
         try {
             clients.getCollectionData().updateOne(Filters.eq("Id Client", id), t.toDocumentClient());
@@ -77,7 +67,17 @@ public class ServiceClient implements NameIdRepository<ClientModels> {
     }
 
     @Override
-    public Document findAllById(int id) {
+    public MongoCollection<Document> all() {
+        try {
+            return clients.getCollectionData();
+        } catch (MongoException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public Document getAllById(int id) {
         try {
             return clients.getCollectionData().find(Filters.eq("Id Client", id)).first();
         } catch (MongoException e) {
@@ -86,7 +86,7 @@ public class ServiceClient implements NameIdRepository<ClientModels> {
     }
 
     @Override
-    public Document findAllByName(String name) {
+    public Document getAllByName(String name) {
         try {
             return clients.getCollectionData().find(Filters.eq("Name", name)).first();
         } catch (MongoException e) {

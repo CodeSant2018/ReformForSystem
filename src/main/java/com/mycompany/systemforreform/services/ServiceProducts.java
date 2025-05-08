@@ -31,15 +31,6 @@ public class ServiceProducts implements NameIdRepository<ProductsModels> {
     }
 
     @Override
-    public MongoCollection<Document> findAll() {
-        try {
-            return products.getCollectionData();
-        } catch (MongoException e) {
-        }
-        return null;
-    }
-
-    @Override
     public void updateById(int id, ProductsModels t) {
         try {
             products.getCollectionData().updateOne(Filters.eq("Id_Product", id), t.toDocumentsProducts());
@@ -76,7 +67,16 @@ public class ServiceProducts implements NameIdRepository<ProductsModels> {
     }
 
     @Override
-    public Document findAllById(int id) {
+    public MongoCollection<Document> all() {
+        try {
+            return products.getCollectionData();
+        } catch (MongoException e) {
+        }
+        return null;
+    }
+
+    @Override
+    public Document getAllById(int id) {
         try {
             products.getCollectionData().find(Filters.eq("Id_Product", id)).first();
         } catch (MongoException e) {
@@ -85,7 +85,7 @@ public class ServiceProducts implements NameIdRepository<ProductsModels> {
     }
 
     @Override
-    public Document findAllByName(String name) {
+    public Document getAllByName(String name) {
         try {
             products.getCollectionData().find(Filters.eq("Product", name)).first();
         } catch (MongoException e) {
