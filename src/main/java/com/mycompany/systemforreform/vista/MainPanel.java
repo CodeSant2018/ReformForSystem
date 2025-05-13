@@ -6,6 +6,7 @@ package com.mycompany.systemforreform.vista;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
 import com.mycompany.systemforreform.vista.products.ProductsPanel;
+import com.mycompany.systemforreform.vista.proveedor.ProveedorPanel;
 import com.mycompany.systemforreform.vista.ventas.PanelVentas;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -107,6 +108,11 @@ public class MainPanel extends javax.swing.JFrame {
         jButton4.setIcon(new FlatSVGIcon("svg/van.svg"));
         jButton4.setText("Proveedores");
         jButton4.setDefaultCapable(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(51, 51, 51));
         jButton5.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 18)); // NOI18N
@@ -259,6 +265,10 @@ public class MainPanel extends javax.swing.JFrame {
         buttonProduct();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        buttonProveedor();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     public void pantcontenedor() {
 // Obtener la resolución de la pantalla
         // Obtener la resolución de la pantalla
@@ -304,6 +314,17 @@ public class MainPanel extends javax.swing.JFrame {
 
     private void buttonProduct() {
         ProductsPanel pp = new ProductsPanel();
+        pp.setSize(contenedor.getWidth(), contenedor.getHeight());
+        pp.setLocation(0, 0);
+
+        contenedor.removeAll();
+        contenedor.add(pp, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+    }
+    
+      private void buttonProveedor() {
+          ProveedorPanel pp = new ProveedorPanel();
         pp.setSize(contenedor.getWidth(), contenedor.getHeight());
         pp.setLocation(0, 0);
 

@@ -77,6 +77,9 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new FlatSVGIcon(&quot;product/boxP.svg&quot;)" type="code"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Administraci&#xf3;n de Productos"/>
       </Properties>
     </Component>
@@ -93,6 +96,9 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new FlatSVGIcon(&quot;product/list.svg&quot;)" type="code"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Lista de Productos "/>
       </Properties>
     </Component>
@@ -107,8 +113,14 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new FlatSVGIcon(&quot;product/add.svg&quot;)" type="code"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Nuevo Producto"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
     <Container class="com.mycompany.systemforreform.vista.PanelRound" name="panelRound5">
       <Properties>

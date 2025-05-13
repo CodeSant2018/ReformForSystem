@@ -4,6 +4,8 @@
  */
 package com.mycompany.systemforreform.vista.products;
 
+import com.formdev.flatlaf.extras.FlatSVGIcon;
+
 /**
  *
  * @author thevoid
@@ -39,18 +41,26 @@ public class ProductsPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new FlatSVGIcon("product/boxP.svg"));
         jLabel1.setText("Administración de Productos");
 
         jTextField1.setText("jTextField1");
 
         jLabel2.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new FlatSVGIcon("product/list.svg"));
         jLabel2.setText("Lista de Productos ");
 
         jButton1.setBackground(new java.awt.Color(237, 86, 6));
         jButton1.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new FlatSVGIcon("product/add.svg"));
         jButton1.setText("Nuevo Producto");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         panelRound5.setBackground(new java.awt.Color(51, 51, 51));
         panelRound5.setRoundBottomLeft(20);
@@ -180,6 +190,15 @@ public class ProductsPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        visbleProduct();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+     private void visbleProduct() {
+        AddProducts ap = new AddProducts();
+        ap.setVisible(true);
+        ap.setLocationRelativeTo(null);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
