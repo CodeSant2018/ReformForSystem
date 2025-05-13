@@ -3,8 +3,9 @@
  */
 package com.mycompany.systemforreform;
 
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMTMonokaiProIJTheme;
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
-import com.mycompany.systemforreform.vista.Products;
+import com.mycompany.systemforreform.vista.MainPanel;
 import javax.swing.UIManager;
 
 /**
@@ -14,11 +15,14 @@ import javax.swing.UIManager;
 public class SystemForReform {
 
     public static void main(String[] args) {
-        FlatMacDarkLaf.setup();
-        UIManager.put( "TextComponent.arc", 30 );
-        Products p = new Products();
-        p.setVisible(true);
-        p.setLocationRelativeTo(null);
-        
+        FlatMTMonokaiProIJTheme.setup();
+        UIManager.put("Button.arc", 15);
+        MainPanel mp = new MainPanel();
+        mp.setVisible(true);
+        mp.setLocationRelativeTo(null);
+     
+        UIManager.put("TextComponent.arc", 15);
+       
+
     }
 }
