@@ -5,6 +5,7 @@
 package com.mycompany.systemforreform.vista;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
+import com.mycompany.systemforreform.vista.products.ProductsPanel;
 import com.mycompany.systemforreform.vista.ventas.PanelVentas;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -94,6 +95,11 @@ public class MainPanel extends javax.swing.JFrame {
         jButton3.setIcon(new FlatSVGIcon("svg/product.svg"));
         jButton3.setText("Productos");
         jButton3.setDefaultCapable(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(51, 51, 51));
         jButton4.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 18)); // NOI18N
@@ -249,6 +255,10 @@ public class MainPanel extends javax.swing.JFrame {
         buttonSales();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        buttonProduct();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     public void pantcontenedor() {
 // Obtener la resolución de la pantalla
         // Obtener la resolución de la pantalla
@@ -280,15 +290,25 @@ public class MainPanel extends javax.swing.JFrame {
         jButton7.setHorizontalAlignment(SwingConstants.LEFT);
 
     }
-    
-    
-    private void buttonSales(){
+
+    private void buttonSales() {
         PanelVentas pv = new PanelVentas();
         pv.setSize(contenedor.getWidth(), contenedor.getHeight());
-        pv.setLocation(0,0);
-        
+        pv.setLocation(0, 0);
+
         contenedor.removeAll();
-        contenedor.add(pv,BorderLayout.CENTER);
+        contenedor.add(pv, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+    }
+
+    private void buttonProduct() {
+        ProductsPanel pp = new ProductsPanel();
+        pp.setSize(contenedor.getWidth(), contenedor.getHeight());
+        pp.setLocation(0, 0);
+
+        contenedor.removeAll();
+        contenedor.add(pp, BorderLayout.CENTER);
         contenedor.revalidate();
         contenedor.repaint();
     }
