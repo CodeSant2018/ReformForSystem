@@ -5,6 +5,7 @@
 package com.mycompany.systemforreform.vista.ventas;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
+import com.mycompany.systemforreform.vista.products.AddProducts;
 
 /**
  *
@@ -77,7 +78,9 @@ public class PanelVentas extends javax.swing.JPanel {
         jLabel1.setText("Ventas");
 
         jButton1.setBackground(new java.awt.Color(237, 86, 6));
+        jButton1.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new FlatSVGIcon("sales/plus.svg"));
         jButton1.setText("Nuevo Producto");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,6 +122,7 @@ public class PanelVentas extends javax.swing.JPanel {
 
         jLabel14.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setIcon(new FlatSVGIcon("sales/user.svg"));
         jLabel14.setText("Cliente");
 
         jTextField6.setText("jTextField6");
@@ -165,13 +169,21 @@ public class PanelVentas extends javax.swing.JPanel {
 
         jLabel15.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setIcon(new FlatSVGIcon("sales/box.svg"));
         jLabel15.setText("Productos");
 
         jTextField7.setText("jTextField7");
 
         jButton3.setBackground(new java.awt.Color(237, 86, 6));
+        jButton3.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new FlatSVGIcon("sales/add.svg"));
         jButton3.setText("Agregar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
         panelRound3.setLayout(panelRound3Layout);
@@ -212,6 +224,7 @@ public class PanelVentas extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new FlatSVGIcon("sales/res.svg"));
         jLabel2.setText("Resumen Venta");
 
         jLabel4.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 18)); // NOI18N
@@ -245,7 +258,13 @@ public class PanelVentas extends javax.swing.JPanel {
         jButton2.setBackground(new java.awt.Color(237, 86, 6));
         jButton2.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new FlatSVGIcon("sales/check.svg"));
         jButton2.setText("Confirmar Venta");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -343,6 +362,7 @@ public class PanelVentas extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new FlatSVGIcon("sales/time.svg"));
         jLabel3.setText("Ventas Registradas");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -410,7 +430,7 @@ public class PanelVentas extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(panelRound4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(panelRound5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 139, Short.MAX_VALUE))
+                        .addGap(0, 140, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -420,9 +440,22 @@ public class PanelVentas extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        visbleProduct();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void visbleProduct() {
+        AddProducts ap = new AddProducts();
+        ap.setVisible(true);
+        ap.setLocationRelativeTo(null);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
