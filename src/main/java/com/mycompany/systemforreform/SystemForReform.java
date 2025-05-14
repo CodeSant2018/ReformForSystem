@@ -17,11 +17,12 @@ public class SystemForReform {
     public static void main(String[] args) {
         FlatMTMonokaiProIJTheme.setup();
         UIManager.put("Button.arc", 15);
+        UIManager.put("TextComponent.arc", 15);
         MainPanel mp = new MainPanel();
         mp.setVisible(true);
         mp.setLocationRelativeTo(null);
      
-        UIManager.put("TextComponent.arc", 15);
+        
        
 
     }
