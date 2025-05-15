@@ -13,17 +13,25 @@ public class ClientModels {
     
     private int idClient;
     private String name;
-    private String phone;
+     private String phone;
+     private String email; 
+    private String typeClint;
     private String location;
+    private String note;
 
-
-    public ClientModels(String name, String phone, String location) {
-        this.idClient = idGenerate();
+    public ClientModels(int idClient, String name, String phone, String email, String typeClint, String location, String note) {
+        this.idClient = idClient;
         this.name = name;
         this.phone = phone;
+        this.email = email;
+        this.typeClint = typeClint;
         this.location = location;
-       
+        this.note = note;
     }
+
+
+   
+
     
     private int idGenerate(){
         Random rd = new Random();
@@ -34,7 +42,10 @@ public class ClientModels {
         return new Document("Id Client",idClient)
                 .append("Name", name)
                 .append("Phone", phone)
-                .append("location", location);
+                .append("Email", email)
+                .append( "Type Client", typeClint)
+                .append("location", location)
+                .append("Note", note);
     }
     
 }

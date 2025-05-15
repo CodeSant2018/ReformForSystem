@@ -5,6 +5,7 @@
 package com.mycompany.systemforreform.vista;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
+import com.mycompany.systemforreform.vista.client.ClientePanel;
 import com.mycompany.systemforreform.vista.products.ProductsPanel;
 import com.mycompany.systemforreform.vista.proveedor.ProveedorPanel;
 import com.mycompany.systemforreform.vista.ventas.PanelVentas;
@@ -121,6 +122,11 @@ public class MainPanel extends javax.swing.JFrame {
         jButton5.setIcon(new FlatSVGIcon("svg/users.svg"));
         jButton5.setText("Clientes");
         jButton5.setDefaultCapable(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setBackground(new java.awt.Color(51, 51, 51));
         jButton6.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 18)); // NOI18N
@@ -289,6 +295,10 @@ public class MainPanel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        buttonCliente();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     public void pantcontenedor() {
 // Obtener la resolución de la pantalla
         // Obtener la resolución de la pantalla
@@ -343,9 +353,20 @@ public class MainPanel extends javax.swing.JFrame {
         contenedor.revalidate();
         contenedor.repaint();
     }
-    
-      private void buttonProveedor() {
-          ProveedorPanel pp = new ProveedorPanel();
+
+    private void buttonProveedor() {
+        ProveedorPanel pp = new ProveedorPanel();
+        pp.setSize(contenedor.getWidth(), contenedor.getHeight());
+        pp.setLocation(0, 0);
+
+        contenedor.removeAll();
+        contenedor.add(pp, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+    }
+
+    private void buttonCliente() {
+        ClientePanel pp = new ClientePanel();
         pp.setSize(contenedor.getWidth(), contenedor.getHeight());
         pp.setLocation(0, 0);
 
