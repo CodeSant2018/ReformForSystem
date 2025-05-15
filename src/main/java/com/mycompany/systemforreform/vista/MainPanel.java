@@ -56,6 +56,7 @@ public class MainPanel extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
         contenedor = new com.mycompany.systemforreform.vista.PanelRound();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -147,6 +148,18 @@ public class MainPanel extends javax.swing.JFrame {
 
         jLabel6.setText("Hora");
 
+        jButton8.setBackground(new java.awt.Color(51, 51, 51));
+        jButton8.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 18)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setIcon(new FlatSVGIcon("svg/userG.svg"));
+        jButton8.setText("Usuarios");
+        jButton8.setDefaultCapable(false);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);
         panelRound1Layout.setHorizontalGroup(
@@ -181,7 +194,8 @@ public class MainPanel extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         panelRound1Layout.setVerticalGroup(
@@ -201,12 +215,14 @@ public class MainPanel extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jButton4)
                 .addGap(30, 30, 30)
+                .addComponent(jButton8)
+                .addGap(30, 30, 30)
                 .addComponent(jButton5)
                 .addGap(30, 30, 30)
                 .addComponent(jButton6)
                 .addGap(30, 30, 30)
                 .addComponent(jButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
                 .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,6 +285,10 @@ public class MainPanel extends javax.swing.JFrame {
         buttonProveedor();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
     public void pantcontenedor() {
 // Obtener la resolución de la pantalla
         // Obtener la resolución de la pantalla
@@ -298,6 +318,7 @@ public class MainPanel extends javax.swing.JFrame {
         jButton5.setHorizontalAlignment(SwingConstants.LEFT);
         jButton6.setHorizontalAlignment(SwingConstants.LEFT);
         jButton7.setHorizontalAlignment(SwingConstants.LEFT);
+        jButton8.setHorizontalAlignment(SwingConstants.LEFT);
 
     }
 
@@ -342,6 +363,7 @@ public class MainPanel extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
