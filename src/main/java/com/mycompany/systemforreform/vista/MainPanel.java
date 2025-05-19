@@ -8,6 +8,7 @@ import com.formdev.flatlaf.extras.FlatSVGIcon;
 import com.mycompany.systemforreform.vista.client.ClientePanel;
 import com.mycompany.systemforreform.vista.products.ProductsPanel;
 import com.mycompany.systemforreform.vista.proveedor.ProveedorPanel;
+import com.mycompany.systemforreform.vista.usuarios.UsuariosPanel;
 import com.mycompany.systemforreform.vista.ventas.PanelVentas;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -252,7 +253,7 @@ public class MainPanel extends javax.swing.JFrame {
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 756, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -292,7 +293,7 @@ public class MainPanel extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+        buttonUser();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -367,6 +368,17 @@ public class MainPanel extends javax.swing.JFrame {
 
     private void buttonCliente() {
         ClientePanel pp = new ClientePanel();
+        pp.setSize(contenedor.getWidth(), contenedor.getHeight());
+        pp.setLocation(0, 0);
+
+        contenedor.removeAll();
+        contenedor.add(pp, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+    }
+    
+     private void buttonUser() {
+         UsuariosPanel pp = new UsuariosPanel();
         pp.setSize(contenedor.getWidth(), contenedor.getHeight());
         pp.setLocation(0, 0);
 
