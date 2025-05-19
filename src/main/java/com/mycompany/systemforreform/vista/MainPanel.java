@@ -8,6 +8,7 @@ import com.formdev.flatlaf.extras.FlatSVGIcon;
 import com.mycompany.systemforreform.vista.client.ClientePanel;
 import com.mycompany.systemforreform.vista.products.ProductsPanel;
 import com.mycompany.systemforreform.vista.proveedor.ProveedorPanel;
+import com.mycompany.systemforreform.vista.reportes.ReportePanel;
 import com.mycompany.systemforreform.vista.usuarios.UsuariosPanel;
 import com.mycompany.systemforreform.vista.ventas.PanelVentas;
 import java.awt.BorderLayout;
@@ -135,6 +136,11 @@ public class MainPanel extends javax.swing.JFrame {
         jButton6.setIcon(new FlatSVGIcon("svg/data.svg"));
         jButton6.setText("Reportes");
         jButton6.setDefaultCapable(false);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setBackground(new java.awt.Color(51, 51, 51));
         jButton7.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 18)); // NOI18N
@@ -300,6 +306,10 @@ public class MainPanel extends javax.swing.JFrame {
         buttonCliente();
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        buttonReport();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     public void pantcontenedor() {
 // Obtener la resolución de la pantalla
         // Obtener la resolución de la pantalla
@@ -387,6 +397,18 @@ public class MainPanel extends javax.swing.JFrame {
         contenedor.revalidate();
         contenedor.repaint();
     }
+     
+        private void buttonReport() {
+            ReportePanel pp = new ReportePanel();
+        pp.setSize(contenedor.getWidth(), contenedor.getHeight());
+        pp.setLocation(0, 0);
+
+        contenedor.removeAll();
+        contenedor.add(pp, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+    }
+     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.mycompany.systemforreform.vista.PanelRound contenedor;
     private javax.swing.JButton jButton1;
