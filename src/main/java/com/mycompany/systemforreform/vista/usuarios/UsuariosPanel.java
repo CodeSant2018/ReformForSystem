@@ -95,6 +95,11 @@ public class UsuariosPanel extends javax.swing.JPanel {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new FlatSVGIcon("user/add.svg"));
         jButton1.setText("Nuevo Usuario");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         panelRound2.setBackground(new java.awt.Color(51, 51, 51));
         panelRound2.setRoundBottomLeft(20);
@@ -167,6 +172,15 @@ public class UsuariosPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        visibleAddUser();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void visibleAddUser(){
+        addUser au = new addUser();
+        au.setVisible(true);
+        au.setLocationRelativeTo(null);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

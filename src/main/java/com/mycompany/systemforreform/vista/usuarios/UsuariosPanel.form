@@ -175,6 +175,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Nuevo Usuario"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
     <Container class="com.mycompany.systemforreform.vista.PanelRound" name="panelRound2">
       <Properties>

@@ -363,6 +363,7 @@ public class AddProducts extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setForeground(new java.awt.Color(237, 86, 6));
+        jButton2.setIcon(new FlatSVGIcon("proveedor/close.svg"));
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
