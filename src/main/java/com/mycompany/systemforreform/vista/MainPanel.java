@@ -63,6 +63,7 @@ public class MainPanel extends javax.swing.JFrame {
         contenedor = new com.mycompany.systemforreform.vista.PanelRound();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         panelRound1.setBackground(new java.awt.Color(51, 51, 51));
         panelRound1.setRoundBottomLeft(20);
@@ -81,6 +82,11 @@ public class MainPanel extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new FlatSVGIcon("svg/exit.svg"));
         jButton1.setText("Cerrar Sesión");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(51, 51, 51));
         jButton2.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 18)); // NOI18N
@@ -309,6 +315,10 @@ public class MainPanel extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         buttonReport();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public void pantcontenedor() {
 // Obtener la resolución de la pantalla
