@@ -155,6 +155,11 @@ public class ReportePanel extends javax.swing.JPanel {
         jButton4.setIcon(new FlatSVGIcon("reporte/curve.svg"));
         jButton4.setText("Finanzas");
         jButton4.setToolTipText("");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(237, 86, 6));
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
@@ -364,6 +369,10 @@ public class ReportePanel extends javax.swing.JPanel {
         visibleInventario();
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        visibleFinanzas();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
    private void visibleVentas(){
         ventasP vp = new ventasP();
         vp.setSize(contenedor.getWidth(),contenedor.getHeight());
@@ -386,6 +395,18 @@ public class ReportePanel extends javax.swing.JPanel {
         contenedor.repaint();
     }
 
+     private void visibleFinanzas(){
+        Finanzas vp = new Finanzas();
+        vp.setSize(contenedor.getWidth(),contenedor.getHeight());
+        vp.setLocation(0,0);
+        
+        contenedor.removeAll();
+        contenedor.add(vp,BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+    }
+
+  
   
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
