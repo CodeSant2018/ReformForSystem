@@ -74,7 +74,7 @@ public class addUser extends javax.swing.JFrame {
 
         jLabel8.setText("Rol");
 
-        jLabel9.setText("jLabel3");
+        jLabel9.setText("Nota");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);

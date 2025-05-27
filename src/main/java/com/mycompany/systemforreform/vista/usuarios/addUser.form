@@ -177,7 +177,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel3"/>
+        <Property name="text" type="java.lang.String" value="Nota"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
