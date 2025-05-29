@@ -5,7 +5,10 @@
 package com.mycompany.systemforreform.vista.ventas;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
+import com.mycompany.systemforreform.table.TableDesing;
 import com.mycompany.systemforreform.vista.products.AddProducts;
+import java.util.Date;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,11 +16,12 @@ import com.mycompany.systemforreform.vista.products.AddProducts;
  */
 public class PanelVentas extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PanelVentas
-     */
+    private DefaultTableModel modelo;
+
     public PanelVentas() {
         initComponents();
+        visibleTable();
+        visibleTablaVentas();
     }
 
     /**
@@ -36,7 +40,7 @@ public class PanelVentas extends javax.swing.JPanel {
         jButton4 = new javax.swing.JButton();
         panelRound2 = new com.mycompany.systemforreform.vista.PanelRound();
         jLabel14 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        jComboBox2 = new javax.swing.JComboBox<>();
         panelRound3 = new com.mycompany.systemforreform.vista.PanelRound();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -116,12 +120,12 @@ public class PanelVentas extends javax.swing.JPanel {
             panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton1)
-                        .addComponent(jButton4)))
+                        .addComponent(jButton4))
+                    .addComponent(jLabel1))
                 .addGap(22, 22, 22))
         );
 
@@ -136,7 +140,7 @@ public class PanelVentas extends javax.swing.JPanel {
         jLabel14.setIcon(new FlatSVGIcon("sales/user.svg"));
         jLabel14.setText("Cliente");
 
-        jTextField6.setText("jTextField6");
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
         panelRound2.setLayout(panelRound2Layout);
@@ -146,7 +150,7 @@ public class PanelVentas extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         panelRound2Layout.setVerticalGroup(
@@ -155,7 +159,7 @@ public class PanelVentas extends javax.swing.JPanel {
                 .addGap(30, 30, 30)
                 .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30))
         );
 
@@ -182,8 +186,6 @@ public class PanelVentas extends javax.swing.JPanel {
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setIcon(new FlatSVGIcon("sales/box.svg"));
         jLabel15.setText("Productos");
-
-        jTextField7.setText("jTextField7");
 
         jButton3.setBackground(new java.awt.Color(237, 86, 6));
         jButton3.setFont(new java.awt.Font("ProFontWindows Nerd Font", 1, 18)); // NOI18N
@@ -474,12 +476,72 @@ public class PanelVentas extends javax.swing.JPanel {
         ap.setLocationRelativeTo(null);
     }
 
+    private void visibleTable() {
+        TableDesing tabla = new TableDesing(modelo, jTable2, culum(), clases(), editables());
+        tabla.creationTable();
+    }
+
+    //Estructura columnas
+    private String[] culum() {
+        String columnas[] = {"ID", "Producto", "Precio", "Cantitad", "Total"};
+        return columnas;
+    }
+
+    //Filas Editables
+    private boolean[] editables() {
+        boolean[]editable = {false,false,false,false,false};
+        return editable;
+    }
+    
+    //Clases por columna
+    private Class[] clases(){
+        Class[] clasesColumans = {
+          java.lang.Integer.class,
+          java.lang.String.class,
+          java.lang.Double.class,
+          java.lang.Integer.class,
+          java.lang.Double.class
+        };
+        return clasesColumans;
+    }
+    
+    //Estructura para tabla ventas registradas
+    private String[] culumasVentas() {
+        String columnas[] = {"ID", "Fecha", "Cliente", "Cantitad Prod.", "Tipo Pago","Ganancias","Total"};
+        return columnas;
+    }
+    
+    private boolean[] editablesVentas() {
+        boolean[]editable = {false,false,false,false,false,false,false};
+        return editable;
+    }
+    
+    private Class[] clasesVentas(){
+        
+        Class[] ventas = {
+        java.lang.Integer.class,
+          java.lang.Object.class,
+          java.lang.String.class,
+          java.lang.Integer.class,
+          java.lang.String.class,
+          java.lang.Double.class,
+          java.lang.Double.class
+        };
+        
+        return ventas;
+    }
+
+    private void visibleTablaVentas(){
+        TableDesing tablaVentas = new TableDesing(modelo, jTable1, culumasVentas(), clasesVentas(), editablesVentas());
+        tablaVentas.creationTable();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -506,7 +568,6 @@ public class PanelVentas extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private com.mycompany.systemforreform.vista.PanelRound panelRound1;
     private com.mycompany.systemforreform.vista.PanelRound panelRound2;
