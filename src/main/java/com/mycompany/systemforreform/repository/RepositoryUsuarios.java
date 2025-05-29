@@ -16,10 +16,10 @@ public interface RepositoryUsuarios <T> {
       void createProducto(T t);
     MongoCollection<Document> findAll();
     void updateByName(String name,T t);
-    void updateById(int id,T t);
+    void updateByUser(String name,T t);
     void deleteByName(String name);
-    void deleteByID(int id);
+    void deleteByUser(String user);
     Document findByName(String name);
-    Document findById(int id);
+    Document findByUser(String user);
     
 }

@@ -17,11 +17,9 @@ public interface RepositoryPedido<T> {
 
     MongoCollection<Document> findAll();
 
-    void updateByName(String name, T t);
 
     void updateByID(int id, T t);
 
-    Document findByName(String name);
 
     Document findByID(int id);
 
