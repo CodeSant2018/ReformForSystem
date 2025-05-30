@@ -5,6 +5,8 @@
 package com.mycompany.systemforreform.vista.reportes;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
+import com.mycompany.systemforreform.table.TableDesing;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -12,12 +14,60 @@ import com.formdev.flatlaf.extras.FlatSVGIcon;
  */
 public class Inventario extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Inventario
-     */
+   
+    private DefaultTableModel model;
     public Inventario() {
         initComponents();
+        visibleProductos();
     }
+    
+     //Estructura tabla productos
+     private String[] columnasProdcutos(){
+         String[]productos = {
+         "Nombre","ID_Prodcuto",
+         "Descripción","Categorías",
+         "Proveedor","Precio Compra",
+         "Precio Venta","Ganancias",
+         "Margen","Stock Incial","Stock Min",
+         "Unidad"
+         };
+         
+         return productos;
+     }
+     
+     private Class[] clasesP(){
+         Class[] produc = {
+         java.lang.String.class,
+         java.lang.Integer.class,
+         java.lang.String.class,
+         java.lang.String.class,
+         java.lang.String.class,
+         java.lang.Double.class,
+         java.lang.Double.class,
+         java.lang.Double.class,
+         java.lang.Double.class,
+         java.lang.Integer.class,
+         java.lang.Integer.class,
+         java.lang.String.class
+         };
+         return produc;
+     }
+     
+     private boolean[] editables(){
+         boolean[]productEdit={false,false,false,
+         false,false,false,
+         false,false,false,
+         false,false,false,
+         };
+         return productEdit;
+     } 
+     
+     private void visibleProductos(){
+         TableDesing productos = new TableDesing(model, jTable1, columnasProdcutos(), clasesP(), editables());
+         productos.creationTable();
+     }
+     
+     
 
     /**
      * This method is called from within the constructor to initialize the form.

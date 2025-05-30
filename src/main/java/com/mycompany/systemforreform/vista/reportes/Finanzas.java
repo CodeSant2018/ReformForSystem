@@ -5,6 +5,8 @@
 package com.mycompany.systemforreform.vista.reportes;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
+import com.mycompany.systemforreform.table.TableDesing;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -12,11 +14,11 @@ import com.formdev.flatlaf.extras.FlatSVGIcon;
  */
 public class Finanzas extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Finanzas
-     */
+    private DefaultTableModel model ;
+    
     public Finanzas() {
         initComponents();
+        visbleFinanzas();
     }
 
     /**
@@ -245,7 +247,59 @@ public class Finanzas extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private String[] columnasCorteCaja() {
+        String[] corteCaja = {
+            "Id_Corte",
+            "Fecha",
+            "Encargado",
+            "Monto Inicial",
+            "Total Efectivo",
+            "Total Transferencias",
+            "Total Tarjeta",
+            "Total Salida Efectivo",
+            "Total Entradas Efectivo",
+            "Dinero Caja",
+            "Total Venta Día",
+            "Efectivo Esperado",
+            "Diferencia",
+            "Ganancias Totales"
+        };
 
+        return corteCaja;
+    }
+
+    private Class<?>[] clasesC() {
+        Class<?>[] corte = {
+            java.lang.Integer.class, // id
+            java.util.Date.class, // fecha
+            java.lang.String.class, // encargado
+            java.lang.Double.class, // montoIncial
+            java.lang.Double.class, // totalEfectivo
+            java.lang.Double.class, // totalTransferencia
+            java.lang.Double.class, // totalTarjeta
+            java.lang.Double.class, // totalSalidas
+            java.lang.Double.class, // totalEntradas
+            java.lang.Double.class, // dineroCaja
+            java.lang.Double.class, // totalVentasDia
+            java.lang.Double.class, // efectivoEsperado
+            java.lang.Double.class, // diferencia
+            java.lang.Double.class // gananciasTotales
+        };
+        return corte;
+    }
+
+    private boolean[] editables() {
+        boolean editables[] = {
+            false, false, false, false, false, false, false,
+            false, false, false, false, false, false, false,};
+        
+        return editables;
+    }
+
+    private void visbleFinanzas(){
+        TableDesing finanzas = new TableDesing(model, jTable1, columnasCorteCaja(), clasesC(), editables());
+        finanzas.creationTable();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
