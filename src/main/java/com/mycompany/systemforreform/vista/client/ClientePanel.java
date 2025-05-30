@@ -5,6 +5,8 @@
 package com.mycompany.systemforreform.vista.client;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
+import com.mycompany.systemforreform.table.TableDesing;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -12,11 +14,10 @@ import com.formdev.flatlaf.extras.FlatSVGIcon;
  */
 public class ClientePanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ClientePanel
-     */
+    private DefaultTableModel modelo;
     public ClientePanel() {
         initComponents();
+        visibleClientes();
     }
 
     /**
@@ -317,6 +318,33 @@ public class ClientePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
 
+    private String[] columnasClientes(){
+        String [] clientes = {"Nombre","Telefono","Correo","Tipo de Cliente","Dirección","Nota"};
+        return clientes;
+    }
+    
+    private Class[] clases (){
+        Class[] clases = {
+        java.lang.String.class,
+        java.lang.String.class,
+        java.lang.String.class,
+        java.lang.String.class,
+        java.lang.String.class,
+        java.lang.String.class
+        };
+        return clases;
+    }
+    
+    private boolean [] editables (){
+        boolean[] editables = {false,false,false,false,false,false};
+        return editables;
+    }
+    
+    private void visibleClientes(){
+        TableDesing clientes = new TableDesing(modelo, jTable1, columnasClientes(),clases(), editables());
+        clientes.creationTable();
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

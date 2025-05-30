@@ -5,6 +5,8 @@
 package com.mycompany.systemforreform.vista.usuarios;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
+import com.mycompany.systemforreform.table.TableDesing;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -12,11 +14,12 @@ import com.formdev.flatlaf.extras.FlatSVGIcon;
  */
 public class UsuariosPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form UsuariosPanel
-     */
+    private DefaultTableModel model;
+    private TableDesing tabla;
+
     public UsuariosPanel() {
         initComponents();
+        visbleTableUsuarios();
     }
 
     /**
@@ -176,10 +179,37 @@ public class UsuariosPanel extends javax.swing.JPanel {
         visibleAddUser();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void visibleAddUser(){
+    private void visibleAddUser() {
         addUser au = new addUser();
         au.setVisible(true);
         au.setLocationRelativeTo(null);
+    }
+
+    //Estructura para tabla usuarios
+    private String[] tablaUsuarios() {
+        String[] usuarios = {"Nombre", "Usuario", "Correo", "Rol", "Contraseña", "Nota", "Activo"};
+        return usuarios;
+    }
+
+    private Class[] clasesUsuarios() {
+        Class[] user = {java.lang.String.class,
+            java.lang.String.class,
+            java.lang.String.class,
+            java.lang.String.class,
+            java.lang.String.class,
+            java.lang.Double.class};
+
+        return user;
+    }
+
+    private boolean[] editableUsuario() {
+        boolean[] usuarios = {false, false, false, false, false, false, false,};
+        return usuarios;
+    }
+
+    private void visbleTableUsuarios() {
+        tabla = new TableDesing(model, jTable1, tablaUsuarios(), clasesUsuarios(), editableUsuario());
+        tabla.creationTable();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

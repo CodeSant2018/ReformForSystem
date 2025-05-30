@@ -5,6 +5,8 @@
 package com.mycompany.systemforreform.vista.products;
 
 import com.formdev.flatlaf.extras.FlatSVGIcon;
+import com.mycompany.systemforreform.table.TableDesing;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -12,11 +14,11 @@ import com.formdev.flatlaf.extras.FlatSVGIcon;
  */
 public class ProductsPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ProductsPanel
-     */
+    private DefaultTableModel model;
+    
     public ProductsPanel() {
         initComponents();
+        visibleProductos();
     }
 
     /**
@@ -361,6 +363,53 @@ public class ProductsPanel extends javax.swing.JPanel {
         ap.setLocationRelativeTo(null);
     }
 
+   //Estructura tabla productos
+     private String[] columnasProdcutos(){
+         String[]productos = {
+         "Nombre","ID_Prodcuto",
+         "Descripción","Categorías",
+         "Proveedor","Precio Compra",
+         "Precio Venta","Ganancias",
+         "Margen","Stock Incial","Stock Min",
+         "Unidad"
+         };
+         
+         return productos;
+     }
+     
+     private Class[] clasesP(){
+         Class[] produc = {
+         java.lang.String.class,
+         java.lang.Integer.class,
+         java.lang.String.class,
+         java.lang.String.class,
+         java.lang.String.class,
+         java.lang.Double.class,
+         java.lang.Double.class,
+         java.lang.Double.class,
+         java.lang.Double.class,
+         java.lang.Integer.class,
+         java.lang.Integer.class,
+         java.lang.String.class
+         };
+         return produc;
+     }
+     
+     private boolean[] editables(){
+         boolean[]productEdit={false,false,false,
+         false,false,false,
+         false,false,false,
+         false,false,false,
+         };
+         return productEdit;
+     } 
+     
+     private void visibleProductos(){
+         TableDesing productos = new TableDesing(model, jTable1, columnasProdcutos(), clasesP(), editables());
+         productos.creationTable();
+     }
+     
+     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

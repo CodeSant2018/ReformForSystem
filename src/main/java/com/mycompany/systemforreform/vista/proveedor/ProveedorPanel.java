@@ -4,20 +4,22 @@
  */
 package com.mycompany.systemforreform.vista.proveedor;
 
-import com.mycompany.systemforreform.vista.products.*;
 import com.formdev.flatlaf.extras.FlatSVGIcon;
+import com.mycompany.systemforreform.table.TableDesing;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author thevoid
  */
+
 public class ProveedorPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ProductsPanel
-     */
+    private DefaultTableModel model;
+    
     public ProveedorPanel() {
         initComponents();
+        visibleModelosTabla();
     }
 
     /**
@@ -256,25 +258,84 @@ public class ProveedorPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-     visbleProveedor();
+        visbleProveedor();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         visiblePedido();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-     private void visbleProveedor() {
+    private void visbleProveedor() {
         addProveedor ap = new addProveedor();
         ap.setVisible(true);
         ap.setLocationRelativeTo(null);
     }
-     
-      private void visiblePedido() {
+
+    private void visiblePedido() {
         addPedido ap = new addPedido();
         ap.setVisible(true);
         ap.setLocationRelativeTo(null);
     }
 
+    //Estructura para tabla proveedores y pedidos
+    private String[] tablaProveedores() {
+        String[] proveedores = {
+            "Nombre", "RFC", "Telefono", "Correo", "Persona Contacto", "Dirección", "Terminos Pago", "Notas"
+        };
+        return proveedores;
+    }
+
+    private String[] tablaPedidos() {
+        String[] pedidos = {
+            "ID_Pedido", "Proveedor", "SubTotal", "Total", "Fecha Entrega", "Estatus"
+        };
+        return pedidos;
+    }
+
+    private Class[] clasesProveedor() {
+        Class[] proveedor = {
+            java.lang.String.class,
+            java.lang.String.class,
+            java.lang.String.class,
+            java.lang.String.class,
+            java.lang.String.class,
+            java.lang.String.class,
+            java.lang.String.class,
+            java.lang.String.class,};
+        return proveedor;
+
+    }
+
+    private Class[] clasesPedido() {
+        Class[] pedido = {
+            java.lang.Integer.class,
+            java.lang.String.class,
+            java.lang.Double.class,
+            java.lang.Double.class,
+            java.lang.Object.class,
+            java.lang.String.class
+
+        };
+        return pedido;
+
+    }
+
+    private boolean[] editableProveedor() {
+        boolean[] editable = {false, false, false, false, false, false, false, false,};
+        return editable;
+    }
+
+    private boolean[] editablePedido() {
+        boolean[] pedido = {false, false, false, false, false, false};
+        return pedido;
+    }
+
+    private  void visibleModelosTabla(){
+        TableDesing pedidos = new TableDesing(model, jTable2, tablaPedidos(), clasesPedido(), editablePedido());
+        TableDesing proveedor = new TableDesing(model, jTable1, tablaProveedores(), clasesProveedor(), editableProveedor());
+        pedidos.creationTable();
+        proveedor.creationTable();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
