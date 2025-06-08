@@ -15,7 +15,7 @@ import org.bson.Document;
 
 public class ProductosModel {
     private String nombre;
-    private int idProductos;
+    private String idProductos;
     private String descripcion;
     private String categoria;
     private String proveedor;

@@ -19,8 +19,8 @@ public class DataReform {
     private MongoDatabase data;
     
     private DataReform(){
-        cliente = MongoClients.create("mongodb://localhost:27017");
-        data = cliente.getDatabase("Reform Data");
+        cliente = MongoClients.create("mongodb+srv://tiendalareforma2025:je4VkAeKpECyPqx6@tiendareforma.b8vf1i5.mongodb.net/?retryWrites=true&w=majority&appName=TiendaReforma");
+        data = cliente.getDatabase("Store_Reform_Data");
     }
     
     

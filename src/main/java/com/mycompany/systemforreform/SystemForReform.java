@@ -18,7 +18,7 @@ public class SystemForReform {
         FlatMTMonokaiProIJTheme.setup();
         UIManager.put("Button.arc", 15);
         UIManager.put("TextComponent.arc", 15);
-        Loging mp = new Loging();
+        MainPanel mp = new MainPanel();
         mp.setVisible(true);
         mp.setLocationRelativeTo(null);
      

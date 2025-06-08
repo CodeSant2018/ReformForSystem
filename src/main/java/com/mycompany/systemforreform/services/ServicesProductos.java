@@ -25,7 +25,7 @@ public class ServicesProductos implements RepositoryProductos<ProductosModel> {
     public void createProducto(ProductosModel t) {
         try {
             productos.getCollectionData().insertOne(t.toDocumentProductos());
-            JOptionPane.showConfirmDialog(null, "Producto Ingresado de Manera Correcta", "!Correcto¡", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Producto Ingresado de Manera Correcta", "!Correcto¡", JOptionPane.INFORMATION_MESSAGE);
         } catch (MongoException e) {
             e.printStackTrace();
         }
@@ -52,7 +52,7 @@ public class ServicesProductos implements RepositoryProductos<ProductosModel> {
     }
 
     @Override
-    public void updateById(int id, ProductosModel t) {
+    public void updateById(String id, ProductosModel t) {
         try {
             productos.getCollectionData().updateOne(Filters.eq("idProductos", id), new Document("$set", t.toDocumentProductos()));
             JOptionPane.showMessageDialog(null, "Producto Actualizado de Manera Correcta", "¡Correcto!", JOptionPane.INFORMATION_MESSAGE);
@@ -72,7 +72,7 @@ public class ServicesProductos implements RepositoryProductos<ProductosModel> {
     }
 
     @Override
-    public void deleteByID(int id) {
+    public void deleteByID(String id) {
         try {
             productos.getCollectionData().deleteOne(Filters.eq("idProductos", id));
             JOptionPane.showMessageDialog(null, "Producto Eliminado de Manera Correcta", "¡Correcto!", JOptionPane.INFORMATION_MESSAGE);
@@ -92,7 +92,7 @@ public class ServicesProductos implements RepositoryProductos<ProductosModel> {
     }
 
     @Override
-    public Document findById(int id) {
+    public Document findById(String id) {
          try {
             return productos.getCollectionData().find(Filters.eq("idProductos",id)).first();
         } catch (MongoException e) {

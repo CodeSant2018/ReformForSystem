@@ -16,9 +16,9 @@ public interface RepositoryProductos <T>{
     void createProducto(T t);
     MongoCollection<Document> findAll();
     void updateByName(String name,T t);
-    void updateById(int id,T t);
+    void updateById(String id,T t);
     void deleteByName(String name);
-    void deleteByID(int id);
+    void deleteByID(String id);
     Document findByName(String name);
-    Document findById(int id);
+    Document findById(String id);
 }

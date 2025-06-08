@@ -34,7 +34,7 @@ public class ControllerProducto implements RepositoryProductos<ProductosModel>{
     }
 
     @Override
-    public void updateById(int id, ProductosModel t) {
+    public void updateById(String id, ProductosModel t) {
         productos.updateById(id, t);
     }
 
@@ -44,7 +44,7 @@ public class ControllerProducto implements RepositoryProductos<ProductosModel>{
     }
 
     @Override
-    public void deleteByID(int id) {
+    public void deleteByID(String id) {
         productos.deleteByID(id);
     }
 
@@ -54,7 +54,7 @@ public class ControllerProducto implements RepositoryProductos<ProductosModel>{
     }
 
     @Override
-    public Document findById(int id) {
+    public Document findById(String id) {
         return productos.findById(id);
     }
     
